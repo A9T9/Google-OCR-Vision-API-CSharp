@@ -94,6 +94,10 @@ namespace OCRAPITest.Google
                             if (annotateImageResponse.TextAnnotations != null && annotateImageResponse.TextAnnotations.Any())
                                 TextResult = annotateImageResponse.TextAnnotations[0].Description.Replace("\n", "\r\n");
                             break;
+                        case "DOCUMENT_TEXT_DETECTION":
+                            if (annotateImageResponse.TextAnnotations != null && annotateImageResponse.TextAnnotations.Any())
+                                TextResult = annotateImageResponse.TextAnnotations[0].Description.Replace("\n", "\r\n");
+                            break;                            
                         case "FACE_DETECTION":
                             if (annotateImageResponse.FaceAnnotations != null && annotateImageResponse.FaceAnnotations.Any())
                                 TextResult = JsonConvert.SerializeObject(annotateImageResponse.FaceAnnotations[0]);                            
